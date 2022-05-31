@@ -38,16 +38,28 @@ export function Calculadora() {
   const calculate = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     if (operator === '+') {
-      setNum(Number(num) + Number(oldNum));
+      setNum(
+        Number(parseFloat(num.toString().replace(',', '.'))) +
+          Number(parseFloat(oldNum.toString().replace(',', '.')))
+      );
     }
     if (operator === '-') {
-      setNum(Number(oldNum) - Number(num));
+      setNum(
+        Number(parseFloat(num.toString().replace(',', '.'))) -
+          Number(parseFloat(oldNum.toString().replace(',', '.')))
+      );
     }
     if (operator === '*') {
-      setNum(Number(oldNum) * Number(num));
+      setNum(
+        Number(parseFloat(num.toString().replace(',', '.'))) *
+          Number(parseFloat(oldNum.toString().replace(',', '.')))
+      );
     }
     if (operator === '/') {
-      setNum(Number(oldNum) / Number(num));
+      setNum(
+        Number(parseFloat(num.toString().replace(',', '.'))) /
+          Number(parseFloat(oldNum.toString().replace(',', '.')))
+      );
     }
   };
 
@@ -57,22 +69,22 @@ export function Calculadora() {
     const value = e.currentTarget.value;
     if (value === '+') {
       setOperator('+');
-      setOldNum(num);
+      setOldNum(parseFloat(num.toString().replace(',', '.')));
       setNum(0);
     }
     if (value === '-') {
       setOperator('-');
-      setOldNum(num);
+      setOldNum(parseFloat(String(num)));
       setNum(0);
     }
     if (value === '*') {
       setOperator('*');
-      setOldNum(num);
+      setOldNum(parseFloat(String(num)));
       setNum(0);
     }
     if (value === '/') {
       setOperator('/');
-      setOldNum(num);
+      setOldNum(parseFloat(String(num)));
       setNum(0);
     }
   };
