@@ -91,9 +91,8 @@ export function Calculadora() {
 
   return (
     <C.Container>
-      <h1>Calculadora</h1>
       <div className="interface">
-        <div>{num}</div>
+        <div className="print">{num}</div>
         <div className="teclas">
           <Tecla valor={'AC'} handleClick={clear} />
           <Tecla valor={'+/-'} handleClick={torgleeSign} />
@@ -111,6 +110,7 @@ export function Calculadora() {
           <Tecla valor={2} handleClick={handleClick} />
           <Tecla valor={3} handleClick={handleClick} />
           <Tecla valor={'+'} handleClick={operatorResult} />
+          <Tecla valor={'.'} handleClick={handleClick} />
           <Tecla valor={0} handleClick={handleClick} />
           <Tecla valor={','} handleClick={handleClick} />
           <Tecla valor={'='} handleClick={calculate} />
